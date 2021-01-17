@@ -1,0 +1,307 @@
+* {
+  box-sizing: border-box;
+}
+
+body, html {
+  height: 100%;
+  margin: 0;
+  overflow: auto;
+}
+
+body {
+  font-family: 'Kalam', cursive;
+  /* background: linear-gradient(115deg, hsl(252, 16%, 55%), hsl(252, 16%, 85%)), url("https://images.pexels.com/photos/265087/pexels-photo-265087.jpeg"); */
+  color: white;
+  font-size: 30px;
+  text-align: center;
+  background-image: linear-gradient(115deg, rgba(129, 122, 159, 0.6), rgba(199, 152, 138, 0.5)), url(https://images.pexels.com/photos/265087/pexels-photo-265087.jpeg);
+  height: 100%;
+  width: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top;
+  position: fixed;
+  /* background: linear-gradient(115deg, hsl(252, 16%, 55%), hsl(252, 16%, 85%)) */
+}
+
+h1 {
+  font-size: 60px;
+}
+
+p {
+  font-size: 30px;
+}
+
+form {
+  display: block;
+  background: rgba(74, 35, 72, 0.8);
+  /*margin: 0 25% 1% 25%;*/
+  max-width: 720px;
+  margin: auto;
+  margin-bottom: 1%;
+  padding: 30px;
+  border-radius: 5px;
+  text-align: left;
+}
+
+/* ---- FORM INPUT ---- */
+.form-input {
+  display: block;
+  width: 100%;
+  height: 50px;
+  margin: 2px 0 20px 0;
+  padding: 0px 15px;
+  border: 1px solid rgb(74, 35, 72);
+  border-radius: 5px;
+  background-clip: padding-box;
+  font-family: 'Kalam', cursive;
+  font-size: 22px;
+  color: rgb(74, 35, 72);
+}
+
+/* Change a border of input after mouse click */
+.form-input:focus {
+  border-color: #C7988A;
+  outline: 0;
+  box-shadow: 0 0 0 3px rgba(199, 152, 138, 0.8);
+}
+
+/* Change Autocomplete Styles */
+input:-webkit-autofill {
+  -webkit-text-fill-color: rgb(74, 35, 72);
+}
+
+::placeholder {
+  color: rgb(199, 152, 138);
+  opacity: 1;
+}
+
+/* ---- SELECT ---- */
+select,
+select option {
+  background: white;
+  color: rgb(74, 35, 72);
+}
+
+select:invalid,
+select option:first-child{
+   color: rgb(199, 152, 138);
+ }
+
+ /* ---- RADIO BUTTONS ---- */
+ .radio-label {
+   display: block;
+   position: relative;
+   cursor: pointer;
+   line-height: 25px;
+   margin: 20px 0;
+   padding-left: 10px;
+ }
+
+ .radio-label .checkmark-radio {
+   background: white; /* added */
+   position: relative;
+   display: block;
+   float: left;
+   margin-right: 10px;
+   width: 20px;
+   height: 20px;
+   border: 2px solid white; /* #c8ccd4; */
+   border-radius: 100%;
+   /*-webkit-tap-highlight-color: transparent;*/
+ }
+
+ .radio-label .checkmark-radio:after {
+  content: '';
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 10px;
+  height: 10px;
+  border-radius: 100%;
+  background: rgb(74, 35, 72); /*#225cff; */
+  transform: scale(0.5);
+  transition: all 0.2s ease;
+  opacity: 0.5; /*0.08;*/
+  pointer-events: none;
+}
+
+.radio-label:hover .checkmark-radio:after {
+  transform: scale(2);
+}
+
+.input-radio {
+  display: none;
+}
+
+.input-radio:checked + .checkmark-radio {
+  border-color: white; /*#225cff;*/
+}
+
+.input-radio:checked + .checkmark-radio:after {
+  transform: scale(1.5);
+  transition: all 0.2s cubic-bezier(0.35, 0.9, 0.4, 0.9);
+  opacity: 1;
+}
+
+/* ---- CHECKBOX ---- */
+.checkbox-label {
+  display: block;
+  position: relative;
+  line-height: 25px;
+  margin: 20px 0;
+  padding-left: 10px;
+  cursor: pointer;
+}
+
+/* Hide the browser's default checkbox */
+.checkbox-label input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Create a custom checkbox */
+.checkmark-checkbox {
+  background-color: white;
+  position: relative;
+  display: block;
+  float: left;
+  margin-right: 10px;
+  width: 15px;
+  height: 15px;
+  border: 1.8px solid white;
+}
+
+/* On mouse-over, add a grey background color */
+.checkbox-label:hover input ~ .checkmark-checkbox {
+  opacity: 0.5;
+}
+
+/* When the checkbox is checked, add a white background */
+.checkbox-label input:checked ~ .checkmark-checkbox {
+  background-color: white; /*#2196F3;*/
+  opacity: 1;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark-checkbox:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.checkbox-label input:checked ~ .checkmark-checkbox:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.checkbox-label .checkmark-checkbox:after {
+  left: 3px;
+  top: 0px;
+  width: 3px;
+  height: 7px;
+  border: solid rgb(74, 35, 72);
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+/* ---- TEXTAREA ---- */
+.input-textarea {
+  display: block;
+  width: 100%;
+  min-height: 120px;
+  margin: 2px 0 20px 0;
+  padding: 0px 15px;
+  border: 1px solid rgb(74, 35, 72);
+  border-radius: 5px;
+  background-clip: padding-box;
+  font-family: 'Kalam', cursive;
+  font-size: 22px;
+  color: rgb(74, 35, 72);
+  resize: vertical;
+}
+
+/* ---- SUBMIT BUTTON ---- */
+.submit-button {
+  display: block;
+  width: 100%;
+  height: 50px;
+  border-width: 0px;
+  background-color: #00ff80; /* #827B9F;*/
+  background-clip: padding-box;
+  border-radius: 5px;
+  font-family: 'Kalam', cursive;
+  font-size: 22px;
+  color: rgb(74, 35, 72);
+  cursor: pointer;
+}
+
+.submit-button:hover {
+  background: linear-gradient(90deg,  #404662, #00ff80, #00ff80, #00ff80, #404662); /* #404662; */
+  border: 1px solid white;
+  opacity: 0.8;
+}
+
+.submit-button:active {
+  background: linear-gradient(90deg, #00ff80, #404662, #404662, #404662, #00ff80);
+  color: hsl(303, 10%, 91%);
+}
+
+/* ---- more detailed information about which fields are required ---- */
+.small {
+    font-size: 15px;
+    margin: 15px 0 0 0;
+}
+
+@media (max-width: 740px) {
+  form {
+    max-width: 720px;
+    margin: 0 1% 1% 1%;
+  }
+}
+
+@media (max-width: 600px) {
+  form {
+    margin: 0 1% 1% 1%;
+    font-size: 20px;
+  }
+  h1 {
+    font-size: 40px;
+  }
+  p {
+    font-size: 20px;
+  }
+  .form-input {
+    font-size: 18px;
+    height: 40px;
+  }
+  .radio-label {
+    line-height: 20px;
+    margin: 10px 0;
+  }
+  .radio-label .checkmark-radio {
+    width: 15px;
+    height: 15px;
+  }
+  .radio-label .checkmark-radio:after {
+    width: 5.5px;
+    height: 5.5px;
+  }
+  .checkbox-label {
+    line-height: 20px;
+  }
+  .input-textarea {
+    font-size: 18px;
+    min-height: 60px;
+  }
+  .submit-button {
+    font-size: 18px;
+    height: 40px;
+  }
+}
