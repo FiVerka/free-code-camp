@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title> My Survey Form </title>
+        <link rel="stylesheet" type="text/css" href="mystyle.css">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@700&display=swap" rel="stylesheet">
+        <!--<script src="script.js"></script>-->
+    </head>
+    <body>
+        <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+        <header>
+            <!-- Content -->
+            <h1 id="title"> My Survey Form </h1>
+            <p id="description"> Help me improve the content of my blog! </p>
+        </header>
+        <main>
+            <!-- Content -->
+            <form id="survey-form">
+                <label id="name-label" for="name">*Name:</label><br>
+                <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    class="form-input"
+                    placeholder="Enter your name..."
+                    required>
+                <label id="email-label" for="email">*E-mail:</label><br>
+                <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    class="form-input"
+                    placeholder="Enter your e-mail..."
+                    required>
+                <label id="number-label" for="number">Age:</label>
+                <input
+                    type="number"
+                    name="age"
+                    id="number"
+                    min="10"
+                    max="120"
+                    class="form-input"
+                    placeholder="Enter your age...">
+                <label id="role-label" for="dropdown">*Choose the option that best describes your current role:</label>
+                <select id="dropdown" name="role" class="form-input" required>
+                    <option disabled selected value>Select current role...</option>
+                    <option value="student">Student</option>
+                    <option value="job">Full Time Job</option>
+                    <option value="learner">Part Time Job</option>
+                    <option value="preferNo">No Job</option>
+                    <option value="other">Other</option>
+                </select>
+                <p>*Would you recommend my blog to a friend?</p>
+                <label class="radio-label" for="yes">
+                    <input
+                        name="user-recommend"
+                        id="yes"
+                        value="yes"
+                        type="radio"
+                        class="input-radio"
+                        checked="checked">
+                    <span class="checkmark-radio"></span>
+                    Yes
+                </label>
+                <label class="radio-label" for="maybe">
+                    <input
+                        name="user-recommend"
+                        id="maybe"
+                        value="maybe"
+                        type="radio"
+                        class="input-radio">
+                    <span class="checkmark-radio"></span>
+                    Maybe
+                </label>
+                <label class="radio-label" for="no">
+                    <input
+                        name="user-recommend"
+                        id="no"
+                        value="no"
+                        type="radio"
+                        class="input-radio">
+                    <span class="checkmark-radio"></span>
+                    No
+                </label>
+                <p>On what topic would you like to read articles?</p>
+                <label class="checkbox-label" for="analyze-data">
+                    <input
+                        name="prefer"
+                        id="analyze-data"
+                        value="analyze-data"
+                        type="checkbox"
+                        class="input-checkbox"/>
+                    <span class="checkmark-checkbox"></span>
+                    Analyze data
+                </label>
+                <label class="checkbox-label" for="software-engineer">
+                    <input
+                        name="prefer"
+                        id="software-engineer"
+                        value="software-engineer"
+                        type="checkbox"
+                        class="input-checkbox"/>
+                    <span class="checkmark-checkbox"></span>
+                    Software engineer
+                </label>
+                <label class="checkbox-label" for="data-science">
+                    <input
+                        name="prefer"
+                        id="data-science"
+                        value="data-science"
+                        type="checkbox"
+                        class="input-checkbox"/>
+                    <span class="checkmark-checkbox"></span>
+                    Data science
+                </label>
+                <label class="checkbox-label" for="design">
+                    <input
+                        name="prefer"
+                        id="design"
+                        value="design"
+                        type="checkbox"
+                        class="input-checkbox"/>
+                    <span class="checkmark-checkbox"></span>
+                    Design
+                </label>
+                <p>Any comments or suggestions?</p>
+                <textarea
+                    id="comments"
+                    class="input-textarea"
+                    name="comment"
+                    placeholder="Enter your comment here..."></textarea>
+                <button type="submit" id="submit" class="submit-button">Submit</button>
+                <p class="small"> * Fields marked with an asterisk are required </p>
+            </form>
+        </main>
+        <footer>
+            <!-- Content -->
+        </footer>
+    </body>
+</html>
